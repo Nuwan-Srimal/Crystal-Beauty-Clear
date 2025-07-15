@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json())
 
-const connectionString = "mongodb+srv://admin:123@cluster0.qnd4lep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connectionString = "mongodb+srv://<user_name>:<password>@cluster0.qnd4lep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 
 mongoose.connect(connectionString).then(
