@@ -2,17 +2,18 @@ import User from "../models/user.js";
 import bcrypt from "bcrypt"
 
 export function createUser(req,res){
-    
-    const hashedpassword = bcrypt.hashSync(req.body.password, 10)
+
+    const hashedPassword = bcrypt.hashSync(req.body.password,10)
 
     const user = new User(
         {
-            email : req.body,email,
-            firestName : req.body.firestName,
+            email : req.body.email,
+            firstName : req.body.firstName,
             lastName : req.body.lastName,
-            password : hashedpassword
+            password : hashedPassword
         }
     )
+
     user.save().then(
         ()=>{
             res.json({
@@ -28,8 +29,8 @@ export function createUser(req,res){
     )
 }
 
-
 export function loginUser(req,res){
+
     User.findOne(
         {
             email : req.body.email
@@ -39,7 +40,7 @@ export function loginUser(req,res){
             if(user == null){
                 res.json(
                     {
-                        message : "User not found"
+                        message: "User not found"
                     }
                 )
             }else{
@@ -47,13 +48,13 @@ export function loginUser(req,res){
                 if(isPasswordMatching){
                     res.json(
                         {
-                            message : "Login successful"
+                            message: "Login successful"
                         }
                     )
                 }else{
                     res.json(
                         {
-                            message : "Login unsuccessful"
+                            message: "Invalid password"
                         }
                     )
                 }
