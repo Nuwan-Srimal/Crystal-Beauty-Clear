@@ -5,3 +5,6 @@ Crystal Beauty Clear is a full-stack application featuring both backend and fron
 change this for before using
 
 mongodb+srv:/<user_name>:<password>@cluster0.qnd4lep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+First Download and run the cmd on folder (npm install express)
